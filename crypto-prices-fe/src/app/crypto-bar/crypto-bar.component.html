@@ -1,0 +1,18 @@
+<div class="card">
+    <h5 class="card-header border-dark text-white">{{item.name}}[{{item.symbol}}]</h5>
+    <div class="card-body bg-dark text-white d-flex">
+        <div class="m-1">
+            <p class="card-text">Price: {{item.price | number:'1.2-10'}}</p>
+            <p class="card-text">Volume: {{item.volume | number:'1.2-2'}}</p>
+            <p class="card-text">Supply: {{item.supply | number:'1.0-0'}}</p>
+        </div>
+        <div class="spacer"></div>
+        <div class="m-1">
+            <p class="card-text">Change: {{item.change | number:'1.2-10'}}%</p>
+            <p class="card-text">24HR change: {{item.changePercent24Hr | number:'1.2-2'}}</p>
+            <p class="card-text">Market cap: {{item.marketCapUsd | number:'1.0-0'}}</p>
+        </div>
+        <div class="spacer"></div>
+        <a [href]="item.explorer" class="coin-info btn btn-outline-primary m-1">Coin info</a>
+    </div>
+</div>

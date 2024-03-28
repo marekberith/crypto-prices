@@ -1,0 +1,5 @@
+<div class="btn-group btn-group-toggle" data-toggle="buttons" style="display: flex;">
+    <button class="btn m-1" (click)="select(option)" [ngClass]="{'btn-primary' : selected(option), 'btn-outline-primary' : !selected(option)}" type="button" *ngFor="let option of aggregationOptions">
+        {{ getAggregationWithOption(option) }}
+    </button>
+</div>

@@ -1,0 +1,10 @@
+.table-responsive-sm {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+tr:hover {
+    td {
+        background-color:  #757575!important; 
+    }
+}

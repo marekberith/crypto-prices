@@ -1,0 +1,28 @@
+<main class="main">
+  <div class="main-navbar sticky-top bg-white">
+    <nav class="navbar navbar-dark bg-dark align-items-stretch navbar-light flex-md-nowrap p-0">
+      <app-search-crypto (inputValueChanged$)="onInputValueChanged($event)"></app-search-crypto>
+      <app-crypto-aggregation (aggregationSelected$)="onAggregationSelected($event, dangerTpl)"></app-crypto-aggregation>
+    </nav>
+  </div>
+  <app-crypto-table (cryptoSelected$)="onCryptoSelected($event, dangerTpl)" [searchCriteria$]="currentSearchValue$"></app-crypto-table>
+  <div #ContainerRef class="card-body m-2 rounded bg-dark text-white">
+    <app-crypto-bar [_item]="currentClicked$ | async"></app-crypto-bar>
+    <ngx-charts-line-chart
+        [results]="data$ | async"
+        [xAxis]="true"
+        [yAxis]="true"
+        [view]="[ContainerRef.offsetWidth, 300]"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [legend]="true"
+    >
+    </ngx-charts-line-chart>
+</div>
+<ng-template #dangerTpl>
+</ng-template>
+
+<app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
+</main>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,19 @@
+app-search-crypto {
+    display: flex;
+    flex: 1 1 0;
+}
+
+app-crypto-aggregation {
+    display: flex;
+}
+
+::ng-deep .ngx-charts { 
+    text{
+        fill: #757575!important; 
+    }
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
